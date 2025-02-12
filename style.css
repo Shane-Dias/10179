@@ -8,3 +8,8 @@ h2 {
   color: red;
   background-color: bisque;
 }
+
+p{
+  color: rgb(80, 134, 233);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

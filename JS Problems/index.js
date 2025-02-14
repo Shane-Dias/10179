@@ -3,7 +3,7 @@ function reverseString() {
   let str = document.getElementById("reverse").value;
   console.log(`String is:${str}`);
   let newStr = str.split("").reverse().join("");
-  document.getElementById("result1").value = newStr;
+  document.getElementById("result1").value = `Result: ${newStr}`;
 }
 
 // console.log(reverseString("hello"));
@@ -15,9 +15,9 @@ function isPalindrome() {
   str = str.toLowerCase();
   // return str === str.split("").reverse().join("");
   if (str === str.split("").reverse().join("")) {
-    document.getElementById("result2").value = "Ture";
+    document.getElementById("result2").value = "Result: Ture";
   } else {
-    document.getElementById("result2").value = "False";
+    document.getElementById("result2").value = "Result: False";
   }
 }
 

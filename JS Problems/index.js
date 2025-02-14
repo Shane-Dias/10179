@@ -78,3 +78,51 @@ function evaluateExpression() {
     document.getElementById("result").textContent = "Invalid Expression";
   }
 }
+
+// Simulated async task (returns a resolved promise after a delay)
+function createTask(id, duration) {
+  return () =>
+    new Promise((resolve) => {
+      const taskItem = document.createElement("li");
+      taskItem.innerText = `Task ${id} started...`;
+      document.getElementById("task-list").appendChild(taskItem);
+
+      setTimeout(() => {
+        taskItem.innerText = `Task ${id} completed ✅`;
+        resolve(`Task ${id} finished`);
+      }, duration);
+    });
+}
+
+// Task execution manager with concurrency control
+async function taskScheduler(tasks, concurrencyLimit) {
+  const queue = [...tasks]; // Clone task list
+  const runningTasks = [];
+
+  while (queue.length > 0 || runningTasks.length > 0) {
+    while (runningTasks.length < concurrencyLimit && queue.length > 0) {
+      const task = queue.shift(); // Take next task
+      const promise = task().then(() => {
+        runningTasks.splice(runningTasks.indexOf(promise), 1); // Remove completed task
+      });
+      runningTasks.push(promise);
+    }
+    await Promise.race(runningTasks); // Wait for at least one task to finish
+  }
+}
+
+// Start execution with concurrency limit
+function startTasks() {
+  document.getElementById("task-list").innerHTML = ""; // Clear previous results
+
+  const tasks = [
+    createTask(1, 2000),
+    createTask(2, 1500),
+    createTask(3, 3000),
+    createTask(4, 1000),
+    createTask(5, 2500),
+  ];
+  const concurrencyLimit = 2;
+
+  taskScheduler(tasks, concurrencyLimit);
+}

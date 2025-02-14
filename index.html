@@ -8,7 +8,7 @@
   <body>
     <div>
       <h2>Easy Level</h2>
-      <div style="margin: 10px;">
+      <div style="margin: 10px">
         <label for="reverse">Q1. Enter String:</label>
         <input type="text" id="reverse" />
         <button onclick="reverseString()">Reverse String</button>
@@ -21,7 +21,7 @@
           disabled
         />
       </div>
-      <div style="margin: 10px;">
+      <div style="margin: 10px">
         <label for="palindrome">Q2. Enter String:</label>
         <input type="text" id="palindrome" />
         <button onclick="isPalindrome()">Check palindrome</button>
@@ -34,7 +34,7 @@
           disabled
         />
       </div>
-      <div style="margin: 10px;">
+      <div style="margin: 10px">
         <label for="largestEle">Q3. Enter numbers separated by commas:</label>
         <input type="text" id="largestEle" placeholder="e.g., 10, 45, 32, 89" />
         <button onclick="findLargest()">Find Largest</button>
@@ -48,8 +48,35 @@
         />
       </div>
     </div>
-    <div style="margin-top: 10px;">
+    <div style="margin-top: 10px">
       <h2>Medium Level</h2>
+      <div style="margin: 10px">
+        <label for="nonRepeating">Q4. Enter String:</label>
+        <input type="text" id="nonRepeating" />
+        <button onclick="findNonRepeating()">
+          Find First Non-Repeating Character
+        </button>
+        <label for="result4"></label>
+        <input
+          type="text"
+          id="result4"
+          style="font-weight: 600"
+          placeholder="Result"
+          disabled
+        />
+      </div>
+      <div>
+        <p>Q5. Enter delay time (ms) and click the button</p>
+        <input type="number" id="delayInput" placeholder="Enter milliseconds" />
+        <button onclick="runDelay()">Start Delay</button>
+        <p id="output"></p>
+      </div>
+      <div>
+        <p>Q6. Expression Evaluator</p>
+        <input type="text" id="expression" placeholder="Enter expression" />
+        <button onclick="evaluateExpression()">Evaluate</button>
+        <p>Result: <span id="result"></span></p>
+      </div>
     </div>
   </body>
   <script src="./index.js"></script>

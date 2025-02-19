@@ -12,6 +12,7 @@ const Counter = () => {
   return (
     <>
       <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
+        <h2 className="text-center text-4xl mb-16 text-teal-600">Counter App</h2>
         <div className="text-3xl font-semibold text-gray-800 mb-4">
           Count: {count}
         </div>
@@ -43,6 +44,14 @@ const Counter = () => {
         >
           Next
         </button>
+        <button
+        className="px-6 py-3 fixed bottom-10 left-10 bg-blue-500 text-white rounded-lg shadow-md"
+        onClick={() => {
+          navigate("/clock");
+        }}
+      >
+        Previous
+      </button>
       </div>
     </>
   );

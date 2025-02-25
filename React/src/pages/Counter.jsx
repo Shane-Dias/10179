@@ -47,7 +47,7 @@ const Counter = () => {
         <button
         className="px-6 py-3 fixed bottom-10 left-10 bg-blue-500 text-white rounded-lg shadow-md"
         onClick={() => {
-          navigate("/clock");
+          navigate("/expense-tracker");
         }}
       >
         Previous

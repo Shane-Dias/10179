@@ -54,7 +54,7 @@ const DigitalClk = () => {
       <button
         className="px-6 py-3 fixed bottom-10 right-10 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-600 transition duration-300"
         onClick={() => {
-          navigate("/");
+          navigate("/expense-tracker");
         }}
       >
         Next

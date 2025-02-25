@@ -63,9 +63,9 @@ export default function ExpenseTracker() {
       <p className="text-red-600">
         Total Expenses: ${totalExpenses.toFixed(2)}
       </p>
-      <ul className="mt-4">
+      <div className="mt-4">
         {transactions.map((transaction) => (
-          <li
+          <div
             key={transaction.id}
             className="flex justify-between p-2 bg-white shadow mb-2 rounded"
           >
@@ -83,9 +83,9 @@ export default function ExpenseTracker() {
             >
               X
             </button>
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
       <button
         className="px-6 py-3 fixed bottom-10 right-10 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-600 transition duration-300"
         onClick={() => {

@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const ColorPicker = () => {
-  const [bgColor, setBgColor] = useState("gray");
+  const [bgColor, setBgColor] = useState("white");
+  const [name, setName] = useState("")
   const navigate = useNavigate();
 
   const handleColorChange = (event) => {
@@ -10,6 +11,11 @@ const ColorPicker = () => {
     // console.log(event.target)
     setBgColor(event.target.value);
   };
+
+  const handleName = (e) => {
+    setName(e.target.value)
+  }
+  
 
   return (
     <div className="h-screen" style={{ backgroundColor: bgColor }}>
@@ -21,8 +27,10 @@ const ColorPicker = () => {
           type="color"
           id="selectColor"
           onChange={handleColorChange}
+          defaultValue="#ffffff"
         />
       </div>
+      <input type="text" className=""  placeholder="Enter name" onChange={handleName}/>
       <button
         className="px-6 py-3 fixed bottom-10 right-10 bg-blue-500 text-white rounded-lg shadow-md"
         onClick={() => {
